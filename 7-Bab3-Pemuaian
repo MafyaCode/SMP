@@ -1,0 +1,1621 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Pemuaian - IPA Kelas 7</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100%;
+      overflow-x: hidden;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 15px;
+    }
+    
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 25px;
+      padding: 20px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .header h1 {
+      font-size: clamp(24px, 5vw, 48px);
+      margin: 0 0 10px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      line-height: 1.2;
+    }
+    
+    .header p {
+      font-size: clamp(16px, 3vw, 24px);
+      margin: 0;
+      opacity: 0.95;
+      line-height: 1.3;
+    }
+    
+    .school-info {
+      font-size: clamp(14px, 2.5vw, 18px);
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+    
+    .navigation {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      padding: 0 10px;
+    }
+    
+    .nav-btn {
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: clamp(12px, 2.5vw, 16px);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      margin: 3px;
+      min-width: 80px;
+      text-align: center;
+    }
+    
+    .nav-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      background: #f0f0f0;
+    }
+    
+    .nav-btn.active {
+      background: #764ba2;
+      color: white;
+    }
+    
+    .slide {
+      display: none;
+      background: white;
+      border-radius: 15px;
+      padding: 20px 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 0.5s ease;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    .slide.active {
+      display: block;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .slide h2 {
+      color: #667eea;
+      font-size: clamp(20px, 4vw, 36px);
+      margin-bottom: 20px;
+      border-bottom: 3px solid #764ba2;
+      padding-bottom: 10px;
+      line-height: 1.3;
+      word-wrap: break-word;
+    }
+    
+    .slide h3 {
+      color: #764ba2;
+      font-size: clamp(18px, 3.5vw, 28px);
+      margin-top: 25px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    
+    .slide h4 {
+      color: #667eea;
+      font-size: clamp(16px, 3vw, 22px);
+      margin-top: 20px;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    
+    .slide p, .slide li {
+      font-size: clamp(14px, 2.5vw, 18px);
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 12px;
+      word-wrap: break-word;
+    }
+    
+    .slide ul {
+      padding-left: 20px;
+    }
+    
+    .concept-box {
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      border-left: 4px solid #667eea;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    
+    .formula-box {
+      background: #f8f9fa;
+      border: 2px solid #667eea;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      text-align: center;
+      overflow-x: auto;
+    }
+    
+    .formula {
+      font-size: clamp(16px, 4vw, 28px);
+      font-weight: bold;
+      color: #764ba2;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+      word-break: break-all;
+      white-space: nowrap;
+    }
+    
+    .example-box {
+      background: #fff8e1;
+      border: 2px solid #ffa726;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    
+    .example-box h4 {
+      color: #f57c00;
+      margin-top: 0;
+    }
+    
+    .solution {
+      background: #e8f5e9;
+      padding: 15px;
+      margin-top: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #4caf50;
+    }
+    
+    .highlight {
+      background: #fff176;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    
+    .info-card {
+      background: white;
+      border: 2px solid #667eea;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 12px 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .emoji {
+      font-size: clamp(20px, 4vw, 32px);
+      margin-right: 8px;
+    }
+    
+    .slide-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid #e0e0e0;
+      gap: 10px;
+    }
+    
+    .control-btn {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: clamp(12px, 2.5vw, 16px);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      flex: 1;
+      max-width: 150px;
+    }
+    
+    .control-btn:hover {
+      background: #764ba2;
+      transform: translateY(-1px);
+    }
+    
+    .control-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      font-size: clamp(12px, 2.2vw, 16px);
+      overflow-x: auto;
+      display: block;
+      white-space: nowrap;
+    }
+    
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .table-wrapper table {
+      display: table;
+      min-width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid #667eea;
+      padding: 8px 12px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    
+    th {
+      background: #667eea;
+      color: white;
+      font-weight: 600;
+      font-size: clamp(11px, 2vw, 14px);
+    }
+    
+    td {
+      font-size: clamp(10px, 1.8vw, 13px);
+    }
+    
+    tr:nth-child(even) {
+      background: #f5f5f5;
+    }
+    
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px 10px;
+      }
+      
+      .header {
+        padding: 15px 10px;
+        margin-bottom: 20px;
+      }
+      
+      .navigation {
+        gap: 5px;
+        padding: 0 5px;
+      }
+      
+      .nav-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 70px;
+      }
+      
+      .slide {
+        padding: 15px 10px;
+        border-radius: 10px;
+      }
+      
+      .concept-box, .formula-box, .example-box, .info-card {
+        padding: 12px;
+        margin: 15px 0;
+      }
+      
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      
+      .slide-controls {
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .control-btn {
+        max-width: none;
+        padding: 12px 20px;
+      }
+      
+      .formula {
+        font-size: 14px;
+        word-break: break-all;
+        white-space: normal;
+      }
+      
+      .emoji {
+        font-size: 24px;
+        margin-right: 5px;
+      }
+    }
+    
+    /* Tablet adjustments */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        padding: 25px 20px;
+      }
+      
+      .slide {
+        padding: 25px 20px;
+      }
+      
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* Large screen adjustments */
+    @media (min-width: 1025px) {
+      .container {
+        padding: 40px 20px;
+      }
+      
+      .slide {
+        padding: 40px;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <h1 id="main-title">🌡️ PEMUAIAN</h1>
+    <p id="subtitle">BAB 3: Suhu, Kalor, dan Pemuaian</p>
+    <p class="school-info" id="school-info">IPA Kelas 7 SMP - Kurikulum Merdeka</p>
+   </div>
+   <div class="navigation" id="navigation"></div>
+   <div id="slides-container"></div>
+  </div>
+  <script>
+    const defaultConfig = {
+      main_title: "🌡️ PEMUAIAN",
+      subtitle: "BAB 3: Suhu, Kalor, dan Pemuaian",
+      school_info: "IPA Kelas 7 SMP - Kurikulum Merdeka"
+    };
+
+    const slides = [
+      {
+        id: 'tujuan',
+        title: 'Tujuan Pembelajaran',
+        content: `
+          <h2>🎯 Tujuan Pembelajaran Sub Bab Pemuaian</h2>
+          
+          <div class="concept-box">
+            <h3>Setelah mempelajari materi ini, kalian diharapkan dapat:</h3>
+            <ul>
+              <li><span class="emoji">✅</span> Memahami konsep pemuaian dan faktor-faktor yang mempengaruhinya</li>
+              <li><span class="emoji">✅</span> Menjelaskan perbedaan pemuaian pada zat padat, cair, dan gas</li>
+              <li><span class="emoji">✅</span> Menghitung pemuaian panjang, luas, dan volume pada zat padat</li>
+              <li><span class="emoji">✅</span> Menganalisis pemuaian zat cair dan anomali air</li>
+              <li><span class="emoji">✅</span> Memahami pemuaian gas dan hukum Gay-Lussac</li>
+              <li><span class="emoji">✅</span> Menerapkan konsep pemuaian dalam kehidupan sehari-hari</li>
+            </ul>
+          </div>
+          
+          <h3>📚 Cakupan Materi</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <h4>🔷 Pemuaian Zat Padat</h4>
+              <ul>
+                <li>Pemuaian Panjang</li>
+                <li>Pemuaian Luas</li>
+                <li>Pemuaian Volume</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>💧 Pemuaian Zat Cair</h4>
+              <ul>
+                <li>Konsep pemuaian cair</li>
+                <li>Anomali air</li>
+                <li>Aplikasi dalam kehidupan</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>💨 Pemuaian Zat Gas</h4>
+              <ul>
+                <li>Hukum Gay-Lussac</li>
+                <li>Hubungan suhu dan volume</li>
+                <li>Contoh penerapan</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h4>🎓 Rekomendasi Belajar</h4>
+              <ul>
+                <li>Pelajari rumus secara bertahap</li>
+                <li>Kerjakan contoh soal</li>
+                <li>Hubungkan dengan kehidupan</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="video-section">
+            <h3>🎥 Video Pembelajaran Tambahan</h3>
+            <p>Tonton video berikut untuk pemahaman yang lebih mendalam:</p>
+            <div class="video-links">
+              <a href="https://www.youtube.com/watch?v=_S8r-k-a4NQ&list=PL6E8cGDJ2xeCw1VjAvZPe7jZee2psXbxJ&index=3" target="_blank" rel="noopener noreferrer" class="video-card">
+                <div class="video-icon">📺</div>
+                <h4>Pemuaian Zat - Konsep Dasar</h4>
+                <p>Video pembelajaran lengkap tentang konsep pemuaian pada zat padat, cair, dan gas</p>
+              </a>
+              <a href="https://www.youtube.com/watch?v=Lbs0W4kMRBI&list=PLRApfU13D-cigfkyuzztMNh_deE9yTtHd&index=15" target="_blank" rel="noopener noreferrer" class="video-card">
+                <div class="video-icon">🎬</div>
+                <h4>Pemuaian - Penjelasan Detail</h4>
+                <p>Penjelasan mendalam tentang rumus pemuaian dan contoh soal praktis</p>
+              </a>
+            </div>
+          </div>
+          
+          <div class="mobile-recommendations">
+            <h3>📱 Tips Belajar di HP</h3>
+            <div class="recommendation-grid">
+              <div class="recommendation-item">
+                <h4>🔄 Rotasi Layar</h4>
+                <p>Putar HP ke landscape untuk melihat tabel dan rumus dengan lebih jelas</p>
+              </div>
+              <div class="recommendation-item">
+                <h4>🔍 Zoom Pinch</h4>
+                <p>Gunakan gesture pinch untuk memperbesar rumus atau diagram yang kecil</p>
+              </div>
+              <div class="recommendation-item">
+                <h4>📖 Mode Baca</h4>
+                <p>Aktifkan mode baca di browser untuk fokus pada materi tanpa gangguan</p>
+              </div>
+              <div class="recommendation-item">
+                <h4>🌙 Mode Gelap</h4>
+                <p>Gunakan mode gelap browser untuk kenyamanan mata saat belajar malam</p>
+              </div>
+              <div class="recommendation-item">
+                <h4>🔖 Bookmark</h4>
+                <p>Simpan halaman ini di bookmark untuk akses cepat saat belajar</p>
+              </div>
+              <div class="recommendation-item">
+                <h4>⏸️ Jeda Berkala</h4>
+                <p>Istirahat 5 menit setiap 25 menit belajar untuk menjaga konsentrasi</p>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 'pengenalan',
+        title: 'Pengenalan Pemuaian',
+        content: `
+          <h2>🌟 Pengenalan Pemuaian</h2>
+          
+          <div class="concept-box">
+            <h3>Apa itu Pemuaian?</h3>
+            <p><strong>Pemuaian</strong> adalah <span class="highlight">bertambahnya ukuran suatu benda</span> (panjang, luas, atau volume) karena <span class="highlight">kenaikan suhu</span>.</p>
+          </div>
+          
+          <h3>🔬 Teori dan Konsep Dasar</h3>
+          <p>Ketika suatu benda dipanaskan, partikel-partikel penyusunnya (atom atau molekul) akan:</p>
+          <ul>
+            <li><span class="emoji">⚡</span> Bergerak lebih cepat</li>
+            <li><span class="emoji">📏</span> Membutuhkan ruang yang lebih besar</li>
+            <li><span class="emoji">↔️</span> Jarak antar partikel bertambah</li>
+            <li><span class="emoji">📈</span> Ukuran benda bertambah (memuai)</li>
+          </ul>
+          
+          <div class="info-card">
+            <h4>💡 Contoh Pemuaian dalam Kehidupan Sehari-hari</h4>
+            <div class="grid-2">
+              <div>
+                <p><span class="emoji">🚂</span> <strong>Rel Kereta Api</strong></p>
+                <p>Diberi celah agar tidak melengkung saat memuai di siang hari</p>
+              </div>
+              <div>
+                <p><span class="emoji">🌉</span> <strong>Jembatan</strong></p>
+                <p>Memiliki sambungan khusus untuk mengantisipasi pemuaian</p>
+              </div>
+              <div>
+                <p><span class="emoji">🔥</span> <strong>Kabel Listrik</strong></p>
+                <p>Dipasang kendur agar tidak putus saat memuai</p>
+              </div>
+              <div>
+                <p><span class="emoji">🍶</span> <strong>Tutup Botol</strong></p>
+                <p>Lebih mudah dibuka setelah disiram air panas</p>
+              </div>
+            </div>
+          </div>
+          
+          <h3>📊 Faktor yang Mempengaruhi Pemuaian</h3>
+          <div class="concept-box">
+            <ol>
+              <li><strong>Kenaikan Suhu (ΔT)</strong> - Semakin besar kenaikan suhu, semakin besar pemuaian</li>
+              <li><strong>Ukuran Awal</strong> - Benda yang lebih panjang/besar akan memuai lebih banyak</li>
+              <li><strong>Jenis Bahan (Koefisien Muai)</strong> - Setiap bahan memiliki kemampuan memuai yang berbeda</li>
+            </ol>
+          </div>
+          
+          <h3>🎯 Rekomendasi Ahli</h3>
+          <div class="example-box">
+            <p><span class="emoji">👨‍🏫</span> <strong>Tips Memahami Pemuaian:</strong></p>
+            <ul>
+              <li>Amati fenomena pemuaian di sekitar kalian</li>
+              <li>Pahami bahwa pemuaian terjadi pada semua zat (padat, cair, gas)</li>
+              <li>Ingat: Pemuaian = Penambahan ukuran karena kenaikan suhu</li>
+              <li>Pelajari koefisien muai untuk memahami perbedaan pemuaian antar bahan</li>
+            </ul>
+          </div>
+        `
+      },
+      {
+        id: 'padat-panjang',
+        title: 'Pemuaian Panjang',
+        content: `
+          <h2>📏 Pemuaian Panjang Zat Padat</h2>
+          
+          <div class="concept-box">
+            <h3>Definisi</h3>
+            <p><strong>Pemuaian panjang</strong> adalah <span class="highlight">pertambahan panjang suatu benda</span> akibat kenaikan suhu. Pemuaian ini terjadi pada benda yang <span class="highlight">dimensi panjangnya lebih dominan</span> dibanding dimensi lainnya.</p>
+          </div>
+          
+          <h3>🔬 Teori dan Konsep</h3>
+          <p>Pemuaian panjang bergantung pada:</p>
+          <ul>
+            <li><strong>Panjang awal (L₀)</strong> - Panjang benda sebelum dipanaskan</li>
+            <li><strong>Koefisien muai panjang (α)</strong> - Karakteristik bahan</li>
+            <li><strong>Perubahan suhu (ΔT)</strong> - Selisih suhu akhir dan awal</li>
+          </ul>
+          
+          <div class="formula-box">
+            <h4>📐 Rumus Pemuaian Panjang</h4>
+            <div class="formula">ΔL = L₀ × α × ΔT</div>
+            <div class="formula">L<sub>t</sub> = L₀ + ΔL = L₀(1 + α × ΔT)</div>
+            
+            <div class="table-wrapper">
+              <table style="margin-top: 20px; text-align: left;">
+                <tr>
+                  <th>Simbol</th>
+                  <th>Keterangan</th>
+                  <th>Satuan</th>
+                </tr>
+                <tr>
+                  <td><strong>ΔL</strong></td>
+                  <td>Pertambahan panjang</td>
+                  <td>meter (m) atau cm</td>
+                </tr>
+                <tr>
+                  <td><strong>L₀</strong></td>
+                  <td>Panjang awal</td>
+                  <td>meter (m) atau cm</td>
+                </tr>
+                <tr>
+                  <td><strong>L<sub>t</sub></strong></td>
+                  <td>Panjang setelah pemuaian</td>
+                  <td>meter (m) atau cm</td>
+                </tr>
+                <tr>
+                  <td><strong>α</strong></td>
+                  <td>Koefisien muai panjang</td>
+                  <td>/°C atau /K</td>
+                </tr>
+                <tr>
+                  <td><strong>ΔT</strong></td>
+                  <td>Perubahan suhu (T<sub>akhir</sub> - T<sub>awal</sub>)</td>
+                  <td>°C atau K</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <h3>📋 Cara Penyebutan Rumus</h3>
+          <div class="info-card">
+            <p><strong>ΔL = L₀ × α × ΔT</strong> dibaca:</p>
+            <p>"Delta L sama dengan L nol dikali alpha dikali delta T"</p>
+            <br>
+            <p><strong>L<sub>t</sub> = L₀(1 + α × ΔT)</strong> dibaca:</p>
+            <p>"L t sama dengan L nol dikali kurung buka satu tambah alpha dikali delta T kurung tutup"</p>
+          </div>
+          
+          <h3>📊 Tabel Koefisien Muai Panjang Beberapa Bahan</h3>
+          <div class="table-wrapper">
+            <table>
+              <tr>
+                <th>Bahan</th>
+                <th>Koefisien Muai Panjang (α) /°C</th>
+              </tr>
+              <tr>
+                <td>Aluminium</td>
+                <td>0,000025 atau 2,5 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Besi/Baja</td>
+                <td>0,000012 atau 1,2 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Tembaga</td>
+                <td>0,000017 atau 1,7 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Kaca</td>
+                <td>0,000009 atau 9 × 10⁻⁶</td>
+              </tr>
+              <tr>
+                <td>Kuningan</td>
+                <td>0,000019 atau 1,9 × 10⁻⁵</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>💡 Contoh Penerapan</h3>
+          <div class="info-card">
+            <p><span class="emoji">🚂</span> <strong>Rel kereta api:</strong> Diberi celah untuk mengantisipasi pemuaian panjang saat siang hari</p>
+            <p><span class="emoji">🔥</span> <strong>Kabel listrik:</strong> Dipasang kendur agar tidak putus saat memuai di siang hari</p>
+            <p><span class="emoji">🌉</span> <strong>Jembatan besi:</strong> Memiliki sambungan ekspansi untuk pemuaian</p>
+          </div>
+        `
+      },
+      {
+        id: 'padat-panjang-soal',
+        title: 'Contoh Soal Pemuaian Panjang',
+        content: `
+          <h2>📝 Contoh Soal Pemuaian Panjang</h2>
+          
+          <div class="example-box">
+            <h4>Contoh Soal 1</h4>
+            <p><strong>Soal:</strong></p>
+            <p>Sebatang besi memiliki panjang 10 meter pada suhu 25°C. Jika besi tersebut dipanaskan hingga suhunya mencapai 75°C, berapakah pertambahan panjang dan panjang akhir besi tersebut? (Koefisien muai panjang besi α = 1,2 × 10⁻⁵ /°C)</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan:</strong></p>
+              <p><strong>Diketahui:</strong></p>
+              <ul>
+                <li>Panjang awal (L₀) = 10 m</li>
+                <li>Suhu awal (T₀) = 25°C</li>
+                <li>Suhu akhir (T<sub>t</sub>) = 75°C</li>
+                <li>Koefisien muai panjang besi (α) = 1,2 × 10⁻⁵ /°C</li>
+              </ul>
+              
+              <p><strong>Ditanya:</strong></p>
+              <ul>
+                <li>Pertambahan panjang (ΔL) = ?</li>
+                <li>Panjang akhir (L<sub>t</sub>) = ?</li>
+              </ul>
+              
+              <p><strong>Jawab:</strong></p>
+              <p><strong>Langkah 1:</strong> Hitung perubahan suhu (ΔT)</p>
+              <p>ΔT = T<sub>t</sub> - T₀ = 75°C - 25°C = 50°C</p>
+              
+              <p><strong>Langkah 2:</strong> Hitung pertambahan panjang (ΔL)</p>
+              <p>ΔL = L₀ × α × ΔT</p>
+              <p>ΔL = 10 m × 1,2 × 10⁻⁵ /°C × 50°C</p>
+              <p>ΔL = 10 × 1,2 × 10⁻⁵ × 50</p>
+              <p>ΔL = 600 × 10⁻⁵ m</p>
+              <p>ΔL = 6 × 10⁻³ m = 0,006 m = 6 mm</p>
+              
+              <p><strong>Langkah 3:</strong> Hitung panjang akhir (L<sub>t</sub>)</p>
+              <p>L<sub>t</sub> = L₀ + ΔL</p>
+              <p>L<sub>t</sub> = 10 m + 0,006 m</p>
+              <p>L<sub>t</sub> = 10,006 m</p>
+              
+              <p><strong>Kesimpulan:</strong></p>
+              <p>✅ Pertambahan panjang besi = <span class="highlight">6 mm atau 0,006 m</span></p>
+              <p>✅ Panjang akhir besi = <span class="highlight">10,006 m</span></p>
+            </div>
+          </div>
+          
+          <div class="example-box">
+            <h4>Contoh Soal 2</h4>
+            <p><strong>Soal:</strong></p>
+            <p>Sebuah rel kereta api terbuat dari baja dengan panjang 25 m pada suhu 20°C. Pada siang hari, suhu rel mencapai 50°C. Jika koefisien muai panjang baja adalah 1,2 × 10⁻⁵ /°C, berapa celah minimum yang harus disediakan agar rel tidak melengkung?</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan:</strong></p>
+              <p><strong>Diketahui:</strong></p>
+              <ul>
+                <li>Panjang awal (L₀) = 25 m</li>
+                <li>Suhu awal (T₀) = 20°C</li>
+                <li>Suhu akhir (T<sub>t</sub>) = 50°C</li>
+                <li>Koefisien muai panjang baja (α) = 1,2 × 10⁻⁵ /°C</li>
+              </ul>
+              
+              <p><strong>Ditanya:</strong></p>
+              <ul>
+                <li>Celah minimum = Pertambahan panjang (ΔL) = ?</li>
+              </ul>
+              
+              <p><strong>Jawab:</strong></p>
+              <p><strong>Langkah 1:</strong> Hitung perubahan suhu (ΔT)</p>
+              <p>ΔT = T<sub>t</sub> - T₀ = 50°C - 20°C = 30°C</p>
+              
+              <p><strong>Langkah 2:</strong> Hitung pertambahan panjang (ΔL)</p>
+              <p>ΔL = L₀ × α × ΔT</p>
+              <p>ΔL = 25 m × 1,2 × 10⁻⁵ /°C × 30°C</p>
+              <p>ΔL = 25 × 1,2 × 10⁻⁵ × 30</p>
+              <p>ΔL = 900 × 10⁻⁵ m</p>
+              <p>ΔL = 9 × 10⁻³ m = 0,009 m = 9 mm</p>
+              
+              <p><strong>Kesimpulan:</strong></p>
+              <p>✅ Celah minimum yang harus disediakan = <span class="highlight">9 mm atau 0,009 m</span></p>
+              <p>💡 Celah ini diperlukan agar rel tidak melengkung atau bengkok saat memuai akibat panas matahari di siang hari.</p>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 'padat-luas',
+        title: 'Pemuaian Luas',
+        content: `
+          <h2>📐 Pemuaian Luas Zat Padat</h2>
+          
+          <div class="concept-box">
+            <h3>Definisi</h3>
+            <p><strong>Pemuaian luas</strong> adalah <span class="highlight">pertambahan luas suatu benda</span> akibat kenaikan suhu. Pemuaian ini terjadi pada benda yang <span class="highlight">dimensi panjang dan lebarnya dominan</span>, seperti lembaran logam atau kaca.</p>
+          </div>
+          
+          <h3>🔬 Teori dan Konsep</h3>
+          <p>Pemuaian luas bergantung pada:</p>
+          <ul>
+            <li><strong>Luas awal (A₀)</strong> - Luas benda sebelum dipanaskan</li>
+            <li><strong>Koefisien muai luas (β)</strong> - Karakteristik bahan</li>
+            <li><strong>Perubahan suhu (ΔT)</strong> - Selisih suhu akhir dan awal</li>
+          </ul>
+          
+          <div class="info-card">
+            <h4>🔗 Hubungan Koefisien Muai Panjang dan Luas</h4>
+            <p>Koefisien muai luas (β) memiliki hubungan dengan koefisien muai panjang (α):</p>
+            <div class="formula">β = 2α</div>
+            <p>Artinya, koefisien muai luas adalah <strong>dua kali</strong> koefisien muai panjang.</p>
+          </div>
+          
+          <div class="formula-box">
+            <h4>📐 Rumus Pemuaian Luas</h4>
+            <div class="formula">ΔA = A₀ × β × ΔT</div>
+            <div class="formula">A<sub>t</sub> = A₀ + ΔA = A₀(1 + β × ΔT)</div>
+            
+            <div class="table-wrapper">
+              <table style="margin-top: 20px; text-align: left;">
+                <tr>
+                  <th>Simbol</th>
+                  <th>Keterangan</th>
+                  <th>Satuan</th>
+                </tr>
+                <tr>
+                  <td><strong>ΔA</strong></td>
+                  <td>Pertambahan luas</td>
+                  <td>m² atau cm²</td>
+                </tr>
+                <tr>
+                  <td><strong>A₀</strong></td>
+                  <td>Luas awal</td>
+                  <td>m² atau cm²</td>
+                </tr>
+                <tr>
+                  <td><strong>A<sub>t</sub></strong></td>
+                  <td>Luas setelah pemuaian</td>
+                  <td>m² atau cm²</td>
+                </tr>
+                <tr>
+                  <td><strong>β</strong></td>
+                  <td>Koefisien muai luas (β = 2α)</td>
+                  <td>/°C atau /K</td>
+                </tr>
+                <tr>
+                  <td><strong>ΔT</strong></td>
+                  <td>Perubahan suhu (T<sub>akhir</sub> - T<sub>awal</sub>)</td>
+                  <td>°C atau K</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <h3>📋 Cara Penyebutan Rumus</h3>
+          <div class="info-card">
+            <p><strong>ΔA = A₀ × β × ΔT</strong> dibaca:</p>
+            <p>"Delta A sama dengan A nol dikali beta dikali delta T"</p>
+            <br>
+            <p><strong>A<sub>t</sub> = A₀(1 + β × ΔT)</strong> dibaca:</p>
+            <p>"A t sama dengan A nol dikali kurung buka satu tambah beta dikali delta T kurung tutup"</p>
+            <br>
+            <p><strong>β = 2α</strong> dibaca:</p>
+            <p>"Beta sama dengan dua alpha"</p>
+          </div>
+          
+          <h3>📊 Tabel Koefisien Muai Luas Beberapa Bahan</h3>
+          <div class="table-wrapper">
+            <table>
+              <tr>
+                <th>Bahan</th>
+                <th>α (/°C)</th>
+                <th>β = 2α (/°C)</th>
+              </tr>
+              <tr>
+                <td>Aluminium</td>
+                <td>2,5 × 10⁻⁵</td>
+                <td>5,0 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Besi/Baja</td>
+                <td>1,2 × 10⁻⁵</td>
+                <td>2,4 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Tembaga</td>
+                <td>1,7 × 10⁻⁵</td>
+                <td>3,4 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Kaca</td>
+                <td>9 × 10⁻⁶</td>
+                <td>1,8 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Kuningan</td>
+                <td>1,9 × 10⁻⁵</td>
+                <td>3,8 × 10⁻⁵</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>💡 Contoh Penerapan</h3>
+          <div class="info-card">
+            <p><span class="emoji">🪟</span> <strong>Kaca jendela:</strong> Diberi celah pada bingkai untuk mengantisipasi pemuaian luas</p>
+            <p><span class="emoji">🏗️</span> <strong>Atap logam:</strong> Dipasang dengan sistem yang memungkinkan pemuaian</p>
+            <p><span class="emoji">🔧</span> <strong>Bimetal:</strong> Dua logam dengan koefisien muai berbeda yang melengkung saat dipanaskan</p>
+          </div>
+        `
+      },
+      {
+        id: 'padat-luas-soal',
+        title: 'Contoh Soal Pemuaian Luas',
+        content: `
+          <h2>📝 Contoh Soal Pemuaian Luas</h2>
+          
+          <div class="example-box">
+            <h4>Contoh Soal 1</h4>
+            <p><strong>Soal:</strong></p>
+            <p>Sebuah lembaran aluminium berbentuk persegi dengan panjang sisi 50 cm pada suhu 30°C. Jika lembaran tersebut dipanaskan hingga suhunya mencapai 80°C, berapakah pertambahan luas dan luas akhir lembaran aluminium tersebut? (Koefisien muai panjang aluminium α = 2,5 × 10⁻⁵ /°C)</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan:</strong></p>
+              <p><strong>Diketahui:</strong></p>
+              <ul>
+                <li>Panjang sisi = 50 cm</li>
+                <li>Luas awal (A₀) = 50 cm × 50 cm = 2.500 cm²</li>
+                <li>Suhu awal (T₀) = 30°C</li>
+                <li>Suhu akhir (T<sub>t</sub>) = 80°C</li>
+                <li>Koefisien muai panjang aluminium (α) = 2,5 × 10⁻⁵ /°C</li>
+                <li>Koefisien muai luas (β) = 2α = 2 × 2,5 × 10⁻⁵ = 5,0 × 10⁻⁵ /°C</li>
+              </ul>
+              
+              <p><strong>Ditanya:</strong></p>
+              <ul>
+                <li>Pertambahan luas (ΔA) = ?</li>
+                <li>Luas akhir (A<sub>t</sub>) = ?</li>
+              </ul>
+              
+              <p><strong>Jawab:</strong></p>
+              <p><strong>Langkah 1:</strong> Hitung perubahan suhu (ΔT)</p>
+              <p>ΔT = T<sub>t</sub> - T₀ = 80°C - 30°C = 50°C</p>
+              
+              <p><strong>Langkah 2:</strong> Hitung pertambahan luas (ΔA)</p>
+              <p>ΔA = A₀ × β × ΔT</p>
+              <p>ΔA = 2.500 cm² × 5,0 × 10⁻⁵ /°C × 50°C</p>
+              <p>ΔA = 2.500 × 5,0 × 10⁻⁵ × 50</p>
+              <p>ΔA = 625.000 × 10⁻⁵ cm²</p>
+              <p>ΔA = 6,25 cm²</p>
+              
+              <p><strong>Langkah 3:</strong> Hitung luas akhir (A<sub>t</sub>)</p>
+              <p>A<sub>t</sub> = A₀ + ΔA</p>
+              <p>A<sub>t</sub> = 2.500 cm² + 6,25 cm²</p>
+              <p>A<sub>t</sub> = 2.506,25 cm²</p>
+              
+              <p><strong>Kesimpulan:</strong></p>
+              <p>✅ Pertambahan luas aluminium = <span class="highlight">6,25 cm²</span></p>
+              <p>✅ Luas akhir aluminium = <span class="highlight">2.506,25 cm²</span></p>
+            </div>
+          </div>
+          
+          <div class="example-box">
+            <h4>Contoh Soal 2</h4>
+            <p><strong>Soal:</strong></p>
+            <p>Sebuah kaca jendela berbentuk persegi panjang dengan ukuran 80 cm × 60 cm dipasang pada suhu 25°C. Jika pada siang hari suhu kaca mencapai 55°C, berapa pertambahan luas kaca tersebut? (Koefisien muai panjang kaca α = 9 × 10⁻⁶ /°C)</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan:</strong></p>
+              <p><strong>Diketahui:</strong></p>
+              <ul>
+                <li>Ukuran kaca = 80 cm × 60 cm</li>
+                <li>Luas awal (A₀) = 80 cm × 60 cm = 4.800 cm²</li>
+                <li>Suhu awal (T₀) = 25°C</li>
+                <li>Suhu akhir (T<sub>t</sub>) = 55°C</li>
+                <li>Koefisien muai panjang kaca (α) = 9 × 10⁻⁶ /°C</li>
+                <li>Koefisien muai luas (β) = 2α = 2 × 9 × 10⁻⁶ = 1,8 × 10⁻⁵ /°C</li>
+              </ul>
+              
+              <p><strong>Ditanya:</strong></p>
+              <ul>
+                <li>Pertambahan luas (ΔA) = ?</li>
+              </ul>
+              
+              <p><strong>Jawab:</strong></p>
+              <p><strong>Langkah 1:</strong> Hitung perubahan suhu (ΔT)</p>
+              <p>ΔT = T<sub>t</sub> - T₀ = 55°C - 25°C = 30°C</p>
+              
+              <p><strong>Langkah 2:</strong> Hitung pertambahan luas (ΔA)</p>
+              <p>ΔA = A₀ × β × ΔT</p>
+              <p>ΔA = 4.800 cm² × 1,8 × 10⁻⁵ /°C × 30°C</p>
+              <p>ΔA = 4.800 × 1,8 × 10⁻⁵ × 30</p>
+              <p>ΔA = 259.200 × 10⁻⁵ cm²</p>
+              <p>ΔA = 2,592 cm²</p>
+              
+              <p><strong>Kesimpulan:</strong></p>
+              <p>✅ Pertambahan luas kaca jendela = <span class="highlight">2,592 cm²</span></p>
+              <p>💡 Meskipun pertambahan luasnya kecil, celah pada bingkai jendela tetap diperlukan untuk mengantisipasi pemuaian ini agar kaca tidak pecah.</p>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 'padat-volume',
+        title: 'Pemuaian Volume',
+        content: `
+          <h2>📦 Pemuaian Volume Zat Padat</h2>
+          
+          <div class="concept-box">
+            <h3>Definisi</h3>
+            <p><strong>Pemuaian volume</strong> adalah <span class="highlight">pertambahan volume suatu benda</span> akibat kenaikan suhu. Pemuaian ini terjadi pada benda yang <span class="highlight">ketiga dimensinya (panjang, lebar, tinggi) sama-sama dominan</span>, seperti kubus atau bola logam.</p>
+          </div>
+          
+          <h3>🔬 Teori dan Konsep</h3>
+          <p>Pemuaian volume bergantung pada:</p>
+          <ul>
+            <li><strong>Volume awal (V₀)</strong> - Volume benda sebelum dipanaskan</li>
+            <li><strong>Koefisien muai volume (γ)</strong> - Karakteristik bahan</li>
+            <li><strong>Perubahan suhu (ΔT)</strong> - Selisih suhu akhir dan awal</li>
+          </ul>
+          
+          <div class="info-card">
+            <h4>🔗 Hubungan Koefisien Muai Panjang, Luas, dan Volume</h4>
+            <p>Koefisien muai volume (γ) memiliki hubungan dengan koefisien muai panjang (α) dan luas (β):</p>
+            <div class="formula">γ = 3α</div>
+            <div class="formula">γ = 1,5β</div>
+            <p>Artinya:</p>
+            <ul>
+              <li>Koefisien muai volume adalah <strong>tiga kali</strong> koefisien muai panjang</li>
+              <li>Koefisien muai volume adalah <strong>1,5 kali</strong> koefisien muai luas</li>
+            </ul>
+          </div>
+          
+          <div class="formula-box">
+            <h4>📐 Rumus Pemuaian Volume</h4>
+            <div class="formula">ΔV = V₀ × γ × ΔT</div>
+            <div class="formula">V<sub>t</sub> = V₀ + ΔV = V₀(1 + γ × ΔT)</div>
+            
+            <div class="table-wrapper">
+              <table style="margin-top: 20px; text-align: left;">
+                <tr>
+                  <th>Simbol</th>
+                  <th>Keterangan</th>
+                  <th>Satuan</th>
+                </tr>
+                <tr>
+                  <td><strong>ΔV</strong></td>
+                  <td>Pertambahan volume</td>
+                  <td>m³ atau cm³</td>
+                </tr>
+                <tr>
+                  <td><strong>V₀</strong></td>
+                  <td>Volume awal</td>
+                  <td>m³ atau cm³</td>
+                </tr>
+                <tr>
+                  <td><strong>V<sub>t</sub></strong></td>
+                  <td>Volume setelah pemuaian</td>
+                  <td>m³ atau cm³</td>
+                </tr>
+                <tr>
+                  <td><strong>γ</strong></td>
+                  <td>Koefisien muai volume (γ = 3α)</td>
+                  <td>/°C atau /K</td>
+                </tr>
+                <tr>
+                  <td><strong>ΔT</strong></td>
+                  <td>Perubahan suhu (T<sub>akhir</sub> - T<sub>awal</sub>)</td>
+                  <td>°C atau K</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <h3>📋 Cara Penyebutan Rumus</h3>
+          <div class="info-card">
+            <p><strong>ΔV = V₀ × γ × ΔT</strong> dibaca:</p>
+            <p>"Delta V sama dengan V nol dikali gamma dikali delta T"</p>
+            <br>
+            <p><strong>V<sub>t</sub> = V₀(1 + γ × ΔT)</strong> dibaca:</p>
+            <p>"V t sama dengan V nol dikali kurung buka satu tambah gamma dikali delta T kurung tutup"</p>
+            <br>
+            <p><strong>γ = 3α</strong> dibaca:</p>
+            <p>"Gamma sama dengan tiga alpha"</p>
+          </div>
+          
+          <h3>📊 Tabel Koefisien Muai Volume Beberapa Bahan</h3>
+          <div class="table-wrapper">
+            <table>
+              <tr>
+                <th>Bahan</th>
+                <th>α (/°C)</th>
+                <th>β = 2α (/°C)</th>
+                <th>γ = 3α (/°C)</th>
+              </tr>
+              <tr>
+                <td>Aluminium</td>
+                <td>2,5 × 10⁻⁵</td>
+                <td>5,0 × 10⁻⁵</td>
+                <td>7,5 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Besi/Baja</td>
+                <td>1,2 × 10⁻⁵</td>
+                <td>2,4 × 10⁻⁵</td>
+                <td>3,6 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Tembaga</td>
+                <td>1,7 × 10⁻⁵</td>
+                <td>3,4 × 10⁻⁵</td>
+                <td>5,1 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Kaca</td>
+                <td>9 × 10⁻⁶</td>
+                <td>1,8 × 10⁻⁵</td>
+                <td>2,7 × 10⁻⁵</td>
+              </tr>
+              <tr>
+                <td>Kuningan</td>
+                <td>1,9 × 10⁻⁵</td>
+                <td>3,8 × 10⁻⁵</td>
+                <td>5,7 × 10⁻⁵</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>💡 Contoh Penerapan</h3>
+          <div class="info-card">
+            <p><span class="emoji">🔩</span> <strong>Baut dan mur:</strong> Baut yang sulit dibuka bisa dilonggarkan dengan memanaskan mur</p>
+            <p><span class="emoji">🍶</span> <strong>Tutup botol:</strong> Tutup botol logam lebih mudah dibuka setelah disiram air panas</p>
+            <p><span class="emoji">⚙️</span> <strong>Pemasangan roda kereta:</strong> Roda dipanaskan agar memuai, kemudian dipasang pada poros</p>
+          </div>
+        `
+      },
+      {
+        id: 'padat-volume-soal',
+        title: 'Contoh Soal Pemuaian Volume',
+        content: `
+          <h2>📝 Contoh Soal Pemuaian Volume</h2>
+          
+          <div class="example-box">
+            <h4>Contoh Soal 1</h4>
+            <p><strong>Soal:</strong></p>
+            <p>Sebuah kubus besi memiliki volume 1.000 cm³ pada suhu 20°C. Jika kubus tersebut dipanaskan hingga suhunya mencapai 120°C, berapakah pertambahan volume dan volume akhir kubus besi tersebut? (Koefisien muai panjang besi α = 1,2 × 10⁻⁵ /°C)</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan:</strong></p>
+              <p><strong>Diketahui:</strong></p>
+              <ul>
+                <li>Volume awal (V₀) = 1.000 cm³</li>
+                <li>Suhu awal (T₀) = 20°C</li>
+                <li>Suhu akhir (T<sub>t</sub>) = 120°C</li>
+                <li>Koefisien muai panjang besi (α) = 1,2 × 10⁻⁵ /°C</li>
+                <li>Koefisien muai volume (γ) = 3α = 3 × 1,2 × 10⁻⁵ = 3,6 × 10⁻⁵ /°C</li>
+              </ul>
+              
+              <p><strong>Ditanya:</strong></p>
+              <ul>
+                <li>Pertambahan volume (ΔV) = ?</li>
+                <li>Volume akhir (V<sub>t</sub>) = ?</li>
+              </ul>
+              
+              <p><strong>Jawab:</strong></p>
+              <p><strong>Langkah 1:</strong> Hitung perubahan suhu (ΔT)</p>
+              <p>ΔT = T<sub>t</sub> - T₀ = 120°C - 20°C = 100°C</p>
+              
+              <p><strong>Langkah 2:</strong> Hitung pertambahan volume (ΔV)</p>
+              <p>ΔV = V₀ × γ × ΔT</p>
+              <p>ΔV = 1.000 cm³ × 3,6 × 10⁻⁵ /°C × 100°C</p>
+              <p>ΔV = 1.000 × 3,6 × 10⁻⁵ × 100</p>
+              <p>ΔV = 360.000 × 10⁻⁵ cm³</p>
+              <p>ΔV = 3,6 cm³</p>
+              
+              <p><strong>Langkah 3:</strong> Hitung volume akhir (V<sub>t</sub>)</p>
+              <p>V<sub>t</sub> = V₀ + ΔV</p>
+              <p>V<sub>t</sub> = 1.000 cm³ + 3,6 cm³</p>
+              <p>V<sub>t</sub> = 1.003,6 cm³</p>
+              
+              <p><strong>Kesimpulan:</strong></p>
+              <p>✅ Pertambahan volume kubus besi = <span class="highlight">3,6 cm³</span></p>
+              <p>✅ Volume akhir kubus besi = <span class="highlight">1.003,6 cm³</span></p>
+            </div>
+          </div>
+          
+          <div class="example-box">
+            <h4>Contoh Soal 2</h4>
+            <p><strong>Soal:</strong></p>
+            <p>Sebuah bola tembaga memiliki volume 500 cm³ pada suhu 25°C. Bola tersebut kemudian dipanaskan hingga volumenya menjadi 501,7 cm³. Jika koefisien muai panjang tembaga α = 1,7 × 10⁻⁵ /°C, berapakah suhu akhir bola tembaga tersebut?</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan:</strong></p>
+              <p><strong>Diketahui:</strong></p>
+              <ul>
+                <li>Volume awal (V₀) = 500 cm³</li>
+                <li>Volume akhir (V<sub>t</sub>) = 501,7 cm³</li>
+                <li>Suhu awal (T₀) = 25°C</li>
+                <li>Koefisien muai panjang tembaga (α) = 1,7 × 10⁻⁵ /°C</li>
+                <li>Koefisien muai volume (γ) = 3α = 3 × 1,7 × 10⁻⁵ = 5,1 × 10⁻⁵ /°C</li>
+              </ul>
+              
+              <p><strong>Ditanya:</strong></p>
+              <ul>
+                <li>Suhu akhir (T<sub>t</sub>) = ?</li>
+              </ul>
+              
+              <p><strong>Jawab:</strong></p>
+              <p><strong>Langkah 1:</strong> Hitung pertambahan volume (ΔV)</p>
+              <p>ΔV = V<sub>t</sub> - V₀ = 501,7 cm³ - 500 cm³ = 1,7 cm³</p>
+              
+              <p><strong>Langkah 2:</strong> Gunakan rumus pemuaian volume untuk mencari ΔT</p>
+              <p>ΔV = V₀ × γ × ΔT</p>
+              <p>ΔT = ΔV / (V₀ × γ)</p>
+              <p>ΔT = 1,7 cm³ / (500 cm³ × 5,1 × 10⁻⁵ /°C)</p>
+              <p>ΔT = 1,7 / (500 × 5,1 × 10⁻⁵)</p>
+              <p>ΔT = 1,7 / (2.550 × 10⁻⁵)</p>
+              <p>ΔT = 1,7 / 0,0255</p>
+              <p>ΔT ≈ 66,67°C</p>
+              
+              <p><strong>Langkah 3:</strong> Hitung suhu akhir (T<sub>t</sub>)</p>
+              <p>T<sub>t</sub> = T₀ + ΔT</p>
+              <p>T<sub>t</sub> = 25°C + 66,67°C</p>
+              <p>T<sub>t</sub> ≈ 91,67°C</p>
+              
+              <p><strong>Kesimpulan:</strong></p>
+              <p>✅ Suhu akhir bola tembaga = <span class="highlight">91,67°C atau sekitar 92°C</span></p>
+              <p>💡 Dengan mengetahui pertambahan volume dan koefisien muai, kita dapat menghitung perubahan suhu yang terjadi.</p>
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 'cair',
+        title: 'Pemuaian Zat Cair',
+        content: `
+          <h2>💧 Pemuaian Zat Cair</h2>
+          
+          <div class="concept-box">
+            <h3>Definisi</h3>
+            <p><strong>Pemuaian zat cair</strong> adalah <span class="highlight">pertambahan volume zat cair</span> akibat kenaikan suhu. Zat cair hanya mengalami pemuaian volume karena tidak memiliki bentuk tetap.</p>
+          </div>
+          
+          <h3>🔬 Teori dan Konsep</h3>
+          <p>Karakteristik pemuaian zat cair:</p>
+          <ul>
+            <li>Zat cair <strong>hanya mengalami pemuaian volume</strong></li>
+            <li>Koefisien muai volume zat cair <strong>lebih besar</strong> daripada zat padat</li>
+            <li>Pemuaian zat cair <strong>tidak teratur</strong> (tidak selalu bertambah seiring kenaikan suhu)</li>
+            <li>Air memiliki sifat khusus yang disebut <strong>anomali air</strong></li>
+          </ul>
+          
+          <div class="formula-box">
+            <h4>📐 Rumus Pemuaian Zat Cair</h4>
+            <div class="formula">ΔV = V₀ × γ<sub>cair</sub> × ΔT</div>
+            <div class="formula">V<sub>t</sub> = V₀(1 + γ<sub>cair</sub> × ΔT)</div>
+            
+            <p style="margin-top: 20px;"><strong>Keterangan:</strong></p>
+            <ul style="text-align: left;">
+              <li><strong>γ<sub>cair</sub></strong> = Koefisien muai volume zat cair</li>
+              <li>Simbol dan satuan lainnya sama dengan pemuaian volume zat padat</li>
+            </ul>
+          </div>
+          
+          <h3>📊 Tabel Koefisien Muai Volume Beberapa Zat Cair</h3>
+          <div class="table-wrapper">
+            <table>
+              <tr>
+                <th>Zat Cair</th>
+                <th>Koefisien Muai Volume (γ) /°C</th>
+              </tr>
+              <tr>
+                <td>Air</td>
+                <td>2,1 × 10⁻⁴</td>
+              </tr>
+              <tr>
+                <td>Alkohol</td>
+                <td>11 × 10⁻⁴</td>
+              </tr>
+              <tr>
+                <td>Minyak Tanah</td>
+                <td>9 × 10⁻⁴</td>
+              </tr>
+              <tr>
+                <td>Raksa (Merkuri)</td>
+                <td>1,8 × 10⁻⁴</td>
+              </tr>
+              <tr>
+                <td>Gliserin</td>
+                <td>5,3 × 10⁻⁴</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>❄️ Anomali Air</h3>
+          <div class="concept-box">
+            <h4>Apa itu Anomali Air?</h4>
+            <p><strong>Anomali air</strong> adalah sifat khusus air yang <span class="highlight">volumenya mengecil (menyusut) saat dipanaskan dari 0°C hingga 4°C</span>, kemudian baru memuai seperti zat cair lainnya setelah suhu di atas 4°C.</p>
+            
+            <h4>Fakta Penting:</h4>
+            <ul>
+              <li>Air memiliki <strong>volume terkecil</strong> pada suhu <span class="highlight">4°C</span></li>
+              <li>Air memiliki <strong>massa jenis terbesar</strong> pada suhu <span class="highlight">4°C</span></li>
+              <li>Dari 0°C ke 4°C: volume <strong>mengecil</strong> (menyusut)</li>
+              <li>Di atas 4°C: volume <strong>membesar</strong> (memuai normal)</li>
+            </ul>
+          </div>
+          
+          <h3>🐟 Manfaat Anomali Air</h3>
+          <div class="info-card">
+            <h4>Kehidupan di Daerah Dingin</h4>
+            <p><span class="emoji">🌊</span> Ketika suhu udara turun di bawah 0°C:</p>
+            <ul>
+              <li>Air di permukaan danau/laut membeku menjadi es (0°C)</li>
+              <li>Es mengapung karena massa jenisnya lebih kecil dari air</li>
+              <li>Air di dasar tetap pada suhu 4°C (massa jenis terbesar)</li>
+              <li>Ikan dan makhluk air dapat bertahan hidup di dasar yang tidak membeku</li>
+            </ul>
+            <p>💡 <strong>Tanpa anomali air</strong>, seluruh danau/laut akan membeku dari dasar ke atas, dan makhluk air akan mati!</p>
+          </div>
+          
+          <h3>💡 Contoh Penerapan Pemuaian Zat Cair</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <h4>🌡️ Termometer</h4>
+              <p>Menggunakan raksa atau alkohol yang memuai teratur untuk mengukur suhu</p>
+            </div>
+            <div class="info-card">
+              <h4>🍶 Botol Kaca</h4>
+              <p>Tidak diisi penuh agar ada ruang untuk pemuaian cairan saat suhu naik</p>
+            </div>
+            <div class="info-card">
+              <h4>🚗 Radiator Mobil</h4>
+              <p>Memiliki tangki cadangan untuk menampung air yang memuai saat mesin panas</p>
+            </div>
+            <div class="info-card">
+              <h4>🔥 Memasak</h4>
+              <p>Minyak goreng memuai saat dipanaskan, sehingga volume bertambah</p>
+            </div>
+          </div>
+          
+          <h3>🎯 Rekomendasi Ahli</h3>
+          <div class="example-box">
+            <p><span class="emoji">👨‍🏫</span> <strong>Tips Memahami Pemuaian Zat Cair:</strong></p>
+            <ul>
+              <li>Ingat bahwa zat cair hanya mengalami pemuaian volume</li>
+              <li>Koefisien muai zat cair lebih besar dari zat padat</li>
+              <li>Pahami anomali air: volume terkecil pada 4°C</li>
+              <li>Hubungkan dengan kehidupan: termometer, botol, radiator</li>
+              <li>Anomali air sangat penting untuk kehidupan di daerah dingin</li>
+            </ul>
+          </div>
+        `
+      },
+      {
+        id: 'gas',
+        title: 'Pemuaian Zat Gas',
+        content: `
+          <h2>💨 Pemuaian Zat Gas</h2>
+          
+          <div class="concept-box">
+            <h3>Definisi</h3>
+            <p><strong>Pemuaian zat gas</strong> adalah <span class="highlight">pertambahan volume gas</span> akibat kenaikan suhu. Gas memiliki koefisien muai yang <strong>jauh lebih besar</strong> dibanding zat padat dan cair.</p>
+          </div>
+          
+          <h3>🔬 Teori dan Konsep</h3>
+          <p>Karakteristik pemuaian zat gas:</p>
+          <ul>
+            <li>Gas <strong>hanya mengalami pemuaian volume</strong></li>
+            <li>Koefisien muai volume gas <strong>sangat besar</strong> (sekitar 1/273 per °C)</li>
+            <li>Pemuaian gas <strong>teratur</strong> dan dapat diprediksi</li>
+            <li>Semua gas memiliki <strong>koefisien muai yang sama</strong> pada tekanan tetap</li>
+          </ul>
+          
+          <div class="formula-box">
+            <h4>📐 Rumus Pemuaian Gas (Hukum Gay-Lussac)</h4>
+            <p><strong>Pada tekanan tetap:</strong></p>
+            <div class="formula">V<sub>t</sub> = V₀(1 + γ<sub>gas</sub> × ΔT)</div>
+            <div class="formula">γ<sub>gas</sub> = 1/273 per °C</div>
+            
+            <p style="margin-top: 20px;"><strong>Atau dapat ditulis:</strong></p>
+            <div class="formula">V₁/T₁ = V₂/T₂</div>
+            
+            <div class="table-wrapper">
+              <table style="margin-top: 20px; text-align: left;">
+                <tr>
+                  <th>Simbol</th>
+                  <th>Keterangan</th>
+                  <th>Satuan</th>
+                </tr>
+                <tr>
+                  <td><strong>V₁, V₂</strong></td>
+                  <td>Volume gas pada kondisi 1 dan 2</td>
+                  <td>m³, L, atau cm³</td>
+                </tr>
+                <tr>
+                  <td><strong>T₁, T₂</strong></td>
+                  <td>Suhu mutlak pada kondisi 1 dan 2</td>
+                  <td>Kelvin (K)</td>
+                </tr>
+                <tr>
+                  <td><strong>γ<sub>gas</sub></strong></td>
+                  <td>Koefisien muai volume gas</td>
+                  <td>1/273 per °C</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <h3>⚠️ Catatan Penting</h3>
+          <div class="concept-box">
+            <h4>Konversi Suhu ke Kelvin</h4>
+            <p>Dalam perhitungan pemuaian gas, <span class="highlight">suhu HARUS dalam satuan Kelvin (K)</span>!</p>
+            <div class="formula">T(K) = T(°C) + 273</div>
+            
+            <p><strong>Contoh:</strong></p>
+            <ul>
+              <li>27°C = 27 + 273 = 300 K</li>
+              <li>0°C = 0 + 273 = 273 K</li>
+              <li>100°C = 100 + 273 = 373 K</li>
+            </ul>
+          </div>
+          
+          <h3>📋 Cara Penyebutan Rumus</h3>
+          <div class="info-card">
+            <p><strong>V₁/T₁ = V₂/T₂</strong> dibaca:</p>
+            <p>"V satu per T satu sama dengan V dua per T dua"</p>
+            <br>
+            <p><strong>γ<sub>gas</sub> = 1/273</strong> dibaca:</p>
+            <p>"Gamma gas sama dengan satu per dua tujuh tiga"</p>
+          </div>
+          
+          <h3>🎈 Hukum Gay-Lussac</h3>
+          <div class="concept-box">
+            <p><strong>Bunyi Hukum Gay-Lussac:</strong></p>
+            <p>"Pada <span class="highlight">tekanan tetap</span>, volume gas <span class="highlight">berbanding lurus</span> dengan suhu mutlaknya."</p>
+            
+            <p style="margin-top: 15px;"><strong>Artinya:</strong></p>
+            <ul>
+              <li>Jika suhu naik → volume gas bertambah</li>
+              <li>Jika suhu turun → volume gas berkurang</li>
+              <li>Perbandingan V/T selalu konstan (tetap)</li>
+            </ul>
+          </div>
+          
+          <h3>💡 Contoh Penerapan Pemuaian Gas</h3>
+          <div class="grid-2">
+            <div class="info-card">
+              <h4>🎈 Balon Udara</h4>
+              <p>Balon mengembang saat dipanaskan karena gas di dalamnya memuai</p>
+            </div>
+            <div class="info-card">
+              <h4>🚗 Ban Kendaraan</h4>
+              <p>Tekanan ban meningkat saat berkendara lama karena udara di dalam memuai</p>
+            </div>
+            <div class="info-card">
+              <h4>🔥 Balon Udara Panas</h4>
+              <p>Dapat terbang karena udara panas di dalamnya memuai dan menjadi lebih ringan</p>
+            </div>
+            <div class="info-card">
+              <h4>🌡️ Termometer Gas</h4>
+              <p>Menggunakan pemuaian gas untuk mengukur suhu dengan akurat</p>
+            </div>
+          </div>
+          
+          <h3>📊 Perbandingan Koefisien Muai</h3>
+          <div class="table-wrapper">
+            <table>
+              <tr>
+                <th>Jenis Zat</th>
+                <th>Koefisien Muai Volume (γ)</th>
+                <th>Keterangan</th>
+              </tr>
+              <tr>
+                <td>Zat Padat</td>
+                <td>≈ 10⁻⁵ /°C</td>
+                <td>Paling kecil</td>
+              </tr>
+              <tr>
+                <td>Zat Cair</td>
+                <td>≈ 10⁻⁴ /°C</td>
+                <td>Sedang</td>
+              </tr>
+              <tr>
+                <td>Zat Gas</td>
+                <td>≈ 1/273 ≈ 3,66 × 10⁻³ /°C</td>
+                <td>Paling besar</td>
+              </tr>
+            </table>
+          </div>
+          
+          <h3>🎯 Rekomendasi Ahli</h3>
+          <div class="example-box">
+            <p><span class="emoji">👨‍🏫</span> <strong>Tips Memahami Pemuaian Gas:</strong></p>
+            <ul>
+              <li>Selalu konversi suhu ke Kelvin sebelum menghitung!</li>
+              <li>Ingat: V/T = konstan (pada tekanan tetap)</li>
+              <li>Gas memuai jauh lebih besar daripada zat padat dan cair</li>
+              <li>Semua gas memiliki koefisien muai yang sama (1/273 per °C)</li>
+              <li>Pahami aplikasi: balon udara, ban kendaraan, dll</li>
+            </ul>
+          </div>
+          
+          <h3>📝 Contoh Soal Sederhana</h3>
+          <div class="example-box">
+            <p><strong>Soal:</strong></p>
+            <p>Sebuah balon berisi gas dengan volume 2 liter pada suhu 27°C. Jika balon dipanaskan hingga suhunya 127°C (tekanan tetap), berapa volume gas dalam balon?</p>
+            
+            <div class="solution">
+              <p><strong>Pembahasan Singkat:</strong></p>
+              <p>Diketahui: V₁ = 2 L, T₁ = 27°C = 300 K, T₂ = 127°C = 400 K</p>
+              <p>V₁/T₁ = V₂/T₂</p>
+              <p>2/300 = V₂/400</p>
+              <p>V₂ = (2 × 400)/300 = 2,67 L</p>
+              <p><strong>Jawaban:</strong> Volume gas menjadi <span class="highlight">2,67 liter</span></p>
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    let currentSlide = 0;
+    let mobileMenuOpen = false;
+
+    function renderNavigation() {
+      const nav = document.getElementById('navigation');
+      nav.innerHTML = slides.map((slide, index) => 
+        `<button class="nav-btn ${index === currentSlide ? 'active' : ''}" onclick="goToSlide(${index})">${slide.title}</button>`
+      ).join('');
+    }
+
+    function renderMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.innerHTML = slides.map((slide, index) => 
+        `<button class="mobile-nav-item ${index === currentSlide ? 'active' : ''}" onclick="goToSlideFromMobile(${index})">${slide.title}</button>`
+      ).join('');
+    }
+
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburger = document.querySelector('.hamburger');
+      
+      mobileMenuOpen = !mobileMenuOpen;
+      
+      if (mobileMenuOpen) {
+        mobileMenu.classList.add('active');
+        hamburger.innerHTML = '✕';
+        renderMobileMenu();
+      } else {
+        mobileMenu.classList.remove('active');
+        hamburger.innerHTML = '☰';
+      }
+    }
+
+    function goToSlideFromMobile(index) {
+      goToSlide(index);
+      toggleMobileMenu(); // Close menu after selection
+    }
+
+    function renderSlide() {
+      const container = document.getElementById('slides-container');
+      container.innerHTML = `
+        <div class="slide active">
+          ${slides[currentSlide].content}
+          <div class="slide-controls">
+            <button class="control-btn" onclick="previousSlide()" ${currentSlide === 0 ? 'disabled' : ''}>
+              ← Sebelumnya
+            </button>
+            <button class="control-btn" onclick="nextSlide()" ${currentSlide === slides.length - 1 ? 'disabled' : ''}>
+              Selanjutnya →
+            </button>
+          </div>
+        </div>
+      `;
+      renderNavigation();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      renderSlide();
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        renderSlide();
+      }
+    }
+
+    function previousSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        renderSlide();
+      }
+    }
+
+    async function onConfigChange(config) {
+      const mainTitle = config.main_title || defaultConfig.main_title;
+      const subtitle = config.subtitle || defaultConfig.subtitle;
+      const schoolInfo = config.school_info || defaultConfig.school_info;
+
+      document.getElementById('main-title').textContent = mainTitle;
+      document.getElementById('subtitle').textContent = subtitle;
+      document.getElementById('school-info').textContent = schoolInfo;
+      document.getElementById('mobile-title').textContent = mainTitle;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [],
+          borderables: [],
+          fontEditable: undefined,
+          fontSizeable: undefined
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["main_title", config.main_title || defaultConfig.main_title],
+          ["subtitle", config.subtitle || defaultConfig.subtitle],
+          ["school_info", config.school_info || defaultConfig.school_info]
+        ])
+      });
+    }
+
+    renderSlide();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99879894b6049ce7',t:'MTc2MjEyODA3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
